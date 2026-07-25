@@ -3,6 +3,8 @@
 ### Base URL
 `http://localhost:5000/api` (or live Render backend URL)
 
+Check details of Live App below.
+
 ---
 
 ### 🔑 Authentication Routes
@@ -136,9 +138,9 @@
 
 ## 🚀 Live Demo & Deployment Links
 
-* **Live Application:** [https://your-frontend-app.vercel.app](https://your-frontend-app.vercel.app)
-* **Backend API Base URL:** [https://your-backend-app.onrender.com](https://your-backend-app.onrender.com)
-* **GitHub Repository:** [https://github.com/your-username/your-repo-name](https://github.com/your-username/your-repo-name)
+* **Live Application:** https://digital-heroes-assignment-tau.vercel.app/
+* **Backend API Base URL:** https://digital-heroes-assignment-server.onrender.com
+* **GitHub Repository:** https://github.com/KtsSoftwares/Digital-Heroes-Assignment
 
 ---
 
