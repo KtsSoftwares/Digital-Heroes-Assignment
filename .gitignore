@@ -1,0 +1,7 @@
+# Create or open .gitignore and ensure these lines are included
+node_modules/
+.env
+.DS_Store
+dist/
+build/
+coverage/
