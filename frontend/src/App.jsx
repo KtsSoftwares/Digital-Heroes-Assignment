@@ -70,7 +70,7 @@ export default function App() {
               path="/dashboard"
               element={
                 user ? (
-                  <Dashboard user={user} onLogout={handleLogout} />
+                  <Dashboard user={user} apiServerUrl={apiServerUrl} onLogout={handleLogout} />
                 ) : (
                   <Navigate to="/login" replace />
                 )
