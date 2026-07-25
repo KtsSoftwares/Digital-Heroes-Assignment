@@ -160,6 +160,21 @@ You can log in with the following pre-configured test accounts, or create new on
 
 ---
 
+#### Summary of Deliverables
+- **Task A (Full-Stack Application):**
+  - MERN CRM featuring role-based access control (Admin/Member) and CRUD operations.
+  - Test suite configured with Jest and Supertest (`npm test` passes in `/server`).
+  - Strict environment variable isolation between client and server.
+  - Included required footer credit (`digitalheroesco.com`).
+
+- **Task B (Architecture & Technical Debt):**
+  - `/docs/ASSESSMENT.md`: Prioritized risk evaluation and impact of technical debt.
+  - `/docs/MIGRATION.md`: Zero-downtime Strangler Fig migration roadmap (Week 1, Month 1, Quarter 1).
+  - `/docs/REFACTOR_DEMO.md`: Before/after refactor demonstrating Controller-Service layer isolation, validation, and authorization.
+  - `/docs/STANDARDS.md`: Engineering quality standards and adoption strategy for resistant teams.
+
+---
+
 ## AI Usage Disclosure
 * I used Gemini AI to pressure-test my initial ideas and help outline the overall structure for Task A. Afterwards, I heavily edited the generated text to reflect my own voice, removed overly generic phrasing, and added specific real-world details based on my project requirements.
 
