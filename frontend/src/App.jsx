@@ -7,6 +7,9 @@ import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 
 export default function App() {
+  const appState = import.meta.env.VITE_API_REACT_ENV;
+  const apiServerUrl = appState === 'development' ? 'http://localhost:5000' : import.meta.env.VITE_API_SERVER_URL;
+
   const [user, setUser] = useState(() => JSON.parse(localStorage.getItem('user')));
 
   const handleLogout = () => {
@@ -39,7 +42,7 @@ export default function App() {
 
         <div className="flex-grow-1">
           <Routes>
-            <Route path="/" element={<PublicLeadForm />} />
+            <Route path="/" element={<PublicLeadForm apiServerUrl={apiServerUrl} />} />
 
             <Route
               path="/login"
@@ -47,7 +50,7 @@ export default function App() {
                 user ? (
                   <Navigate to="/dashboard" replace />
                 ) : (
-                  <Login setAuth={setUser} />
+                  <Login setAuth={setUser} apiServerUrl={apiServerUrl} />
                 )
               }
             />
@@ -58,7 +61,7 @@ export default function App() {
                 user ? (
                   <Navigate to="/dashboard" replace />
                 ) : (
-                  <Register setAuth={setUser} />
+                  <Register setAuth={setUser} apiServerUrl={apiServerUrl} />
                 )
               }
             />

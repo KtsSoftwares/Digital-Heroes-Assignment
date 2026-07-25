@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import BS_Alert from './BS_Alert';
 
-export default function Login({ setAuth }) {
+export default function Login({ setAuth, apiServerUrl }) {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ export default function Login({ setAuth }) {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/login', credentials);
+            const res = await axios.post(`${apiServerUrl}/api/auth/login`, credentials);
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('user', JSON.stringify(res.data.user));
             setAuth(res.data.user);

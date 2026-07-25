@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import BS_Alert from './BS_Alert';
 
-export default function Register({ setAuth }) {
+export default function Register({ setAuth, apiServerUrl }) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -26,10 +26,10 @@ export default function Register({ setAuth }) {
 
         try {
             // Register the user
-            await axios.post('http://localhost:5000/api/auth/register', formData);
+            await axios.post(`${apiServerUrl}/api/auth/register`, formData);
 
             // Automatically log them in after registration
-            const loginRes = await axios.post('http://localhost:5000/api/auth/login', {
+            const loginRes = await axios.post(`${apiServerUrl}/api/auth/login`, {
                 email: formData.email,
                 password: formData.password
             });

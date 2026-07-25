@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import BS_Alert from './BS_Alert';
 
-export default function Dashboard({ user, onLogout }) {
+export default function Dashboard({ user, apiServerUrl, onLogout }) {
     const [leads, setLeads] = useState([]);
     const [teamMembers, setTeamMembers] = useState([]); // List of users for admin assignment
     const [pagination, setPagination] = useState({ page: 1, limit: 5, totalPages: 1, totalItems: 0 });
@@ -23,7 +23,7 @@ export default function Dashboard({ user, onLogout }) {
     const fetchLeads = async (page = 1, status = statusFilter) => {
         setLoading(true);
         try {
-            const res = await axios.get(`http://localhost:5000/api/leads?page=${page}&limit=${pagination.limit}&status=${status}`, {
+            const res = await axios.get(`${apiServerUrl}/api/leads?page=${page}&limit=${pagination.limit}&status=${status}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setLeads(res.data.leads);
@@ -41,7 +41,7 @@ export default function Dashboard({ user, onLogout }) {
         if (user?.role !== 'ADMIN') return;
         setLoading(true);
         try {
-            const res = await axios.get('http://localhost:5000/api/auth/users', {
+            const res = await axios.get(`${apiServerUrl}/api/auth/users`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setTeamMembers(res.data);
@@ -64,7 +64,7 @@ export default function Dashboard({ user, onLogout }) {
         setLoading(true);
         try {
             await axios.patch(
-                `http://localhost:5000/api/leads/${leadId}/status`,
+                `${apiServerUrl}/api/leads/${leadId}/status`,
                 { status: newStatus },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -82,7 +82,7 @@ export default function Dashboard({ user, onLogout }) {
         setLoading(true);
         try {
             await axios.patch(
-                `http://localhost:5000/api/leads/${leadId}/assign`,
+                `${apiServerUrl}/api/leads/${leadId}/assign`,
                 { assignedTo: newAssigneeId || null },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -100,7 +100,7 @@ export default function Dashboard({ user, onLogout }) {
         setSelectedLead(lead);
         setLoadingDetails(true);
         try {
-            const res = await axios.get(`http://localhost:5000/api/leads/${lead._id}/activity`, {
+            const res = await axios.get(`${apiServerUrl}/api/leads/${lead._id}/activity`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setNotes(res.data.notes);
@@ -119,7 +119,7 @@ export default function Dashboard({ user, onLogout }) {
 
         try {
             await axios.post(
-                `http://localhost:5000/api/leads/${selectedLead._id}/notes`,
+                `${apiServerUrl}/api/leads/${selectedLead._id}/notes`,
                 { text: newNoteText },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

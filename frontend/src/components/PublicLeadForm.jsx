@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import BS_Alert from './BS_Alert';
 
-export default function PublicLeadForm() {
+export default function PublicLeadForm({ apiServerUrl }) {
     const [formData, setFormData] = useState({ name: '', email: '', company: '' });
     const [status, setStatus] = useState({ type: '', msg: '' });
 
@@ -11,7 +11,7 @@ export default function PublicLeadForm() {
         setStatus({ type: 'info', msg: 'Submitting...' });
 
         try {
-            const res = await axios.post('http://localhost:5000/api/leads/public', formData);
+            const res = await axios.post(`${apiServerUrl}/api/leads/public`, formData);
             setStatus({ type: 'success', msg: res.data.message });
             setFormData({ name: '', email: '', company: '' });
         } catch (err) {
