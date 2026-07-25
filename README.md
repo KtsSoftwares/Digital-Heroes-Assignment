@@ -122,6 +122,7 @@ Check details of Live App below.
 * **Access:** Private (ADMIN & MEMBER)
 * **Headers:** Authorization: Bearer <JWT_TOKEN>
 
+---
 
 ### 🚦 Standard HTTP Status Codes Returned
 
@@ -135,6 +136,7 @@ Check details of Live App below.
 | 404 Not Found | Resource Error | Lead or User ID does not exist in database |
 | 500 Internal Server Error | Server Error | Unhandled server or database error |
 
+---
 
 ## 🚀 Live Demo & Deployment Links
 
