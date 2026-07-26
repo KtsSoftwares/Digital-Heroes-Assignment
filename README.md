@@ -184,6 +184,6 @@ You can log in with the following pre-configured test accounts, or create new on
 ## AI Usage Disclosure
 * I used Gemini AI to pressure-test my initial ideas and help outline the overall structure for Task A. Afterwards, I heavily edited the generated text to reflect my own voice, removed overly generic phrasing, and added specific real-world details based on my project requirements.
 
-* I used ChatGPT to help debug a logic error in Task A and suggest optimal code structures for the API routes. After reviewing the suggestions, I refactored the code to align with my project’s overall architecture, renamed variables for consistency, and manually tested the edge cases to ensure stability.
+* I used Gemini AI to help debug a logic error in Task A and suggest optimal code structures for the API routes. After reviewing the suggestions, I refactored the code to align with my project’s overall architecture, renamed variables for consistency, and manually tested the edge cases to ensure stability.
 
 * For Task B I took help from Gemini AI to help me structure the Task in well manner and help me plan my strategy, refactored my code and debugging.
